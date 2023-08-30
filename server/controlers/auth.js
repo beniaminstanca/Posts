@@ -32,24 +32,6 @@ exports.signup = async (req, res, next) => {
     }
     next(err);
   }
-
-  //   bycrypt
-  //     .hash(password, 12)
-  //     .then((hashedPw) => {
-  //       const user = new User({ email, password: hashedPw, name });
-  //       return user.save();
-  //     })
-  //     .then((result) => {
-  //       res
-  //         .status(201)
-  //         .json({ message: "User created successfuly", userId: result._id });
-  //     })
-  //     .catch((err) => {
-  //       if (!err.statusCode) {
-  //         err.statusCode = 500;
-  //       }
-  //       next(err);
-  //     });
 };
 
 exports.login = async (req, res, next) => {
