@@ -35,7 +35,6 @@ const App = () => {
     const userId = localStorage.getItem("userId");
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
-    console.log("useEffect token", token);
     setIsAuth(true);
     setToken(token);
     setUserId(userId);
@@ -84,7 +83,6 @@ const App = () => {
 
       const resData = await response.json();
 
-      console.log("login handler resData", resData);
       setToken(resData.token);
       setIsAuth(true);
       setAuthLoading(false);
@@ -126,7 +124,6 @@ const App = () => {
         throw new Error("Creating a user failed!");
       }
       const resData = await response.json();
-      console.log(resData);
       setIsAuth(false);
       setAuthLoading(false);
       // this.props.history.replace("/");
@@ -173,8 +170,6 @@ const App = () => {
   );
 
   if (isAuth) {
-    console.log("userId", userId);
-    console.log("asasasasastoken", token);
     routes = (
       <Switch>
         <Route
